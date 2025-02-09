@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -25,7 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
   ],
   providers: [DriverStandingsService],
   templateUrl: './driver-standings.component.html',
-  styleUrls: ['./driver-standings.component.css']
+  styleUrls: ['./driver-standings.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DriverStandingsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'season_points', 'season_team_name'];
@@ -36,7 +37,7 @@ export class DriverStandingsComponent implements OnInit {
   teamFilter: string = '';
   countryCodeFilter: string = '';
   years: number[] = [];
-  selectedYear: number = new Date().getFullYear();
+  selectedYear: number = new Date().getFullYear()-1;
 
   @ViewChild(MatSort) sort!: MatSort;
 

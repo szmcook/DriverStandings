@@ -9,5 +9,5 @@ import { DriverStandingsComponent } from './driver-standings/driver-standings.co
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'DriverStandingsWebApp';
+  title = 'Driver Standings';
 }

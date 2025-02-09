@@ -2,52 +2,60 @@
   --blue: #001a30;
   --red: #ea1d2d;
   --grey: #a8a9ac;
+  --f1grey: #f3f3f3;
   --yellow: #fcd700;
-
-  --font-primary: 'Futura-PT', sans-serif;
-  --font-secondary: 'Arial', sans-serif;
 }
 
-::ng-deep .driver-standings-table {
+.driver-standings-wrapper{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filters-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-container{
+  width: 80%;
+  display: flex;
+}
+
+.driver-standings-table {
+  width: 80%;
   border-collapse: collapse;
   font-family: var(--font-secondary);
-  font-size: 18px;
+  font-size: 1rem;
   text-align: left;
 }
 
-::ng-deep .driver-standings-table thead {
+.driver-standings-table thead {
   font-weight: bold;
-  border-bottom: 2px solid black;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--grey);
 }
 
-::ng-deep .driver-standings-table th,
-::ng-deep .driver-standings-table td {
+.driver-standings-table th,
+.driver-standings-table td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
 }
 
-::ng-deep .driver-standings-table tbody tr:nth-child(odd) {
-  background-color: var(--grey);
+.driver-standings-table tbody tr:nth-child(even) {
+  background-color: var(--f1grey);
 }
 
-::ng-deep .driver-standings-table tbody tr:hover {
+.driver-standings-table tbody tr:hover {
   background-color: #e0e0e0;
 }
 
-::ng-deep .driver-standings-table a {
-  text-decoration: underline;
-  color: black;
-}
-
-::ng-deep .driver-standings-table a:hover {
-  color: #555;
-}
-
-::ng-deep h1 {
-  font-size: 40px;
+h1 {
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-align: left;
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
 }
