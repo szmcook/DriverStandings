@@ -59,6 +59,7 @@ export class DriverStandingsComponent implements OnInit {
   }
 
   getDriverStandings(year: number){
+    this.dataSource = new MatTableDataSource();
     this.driverStandingsService.getDriverStandings(year).subscribe(
       data => {
         this.setDataSource(data);
@@ -74,8 +75,8 @@ export class DriverStandingsComponent implements OnInit {
     this.dataSource.sort = this.sort;
 
     // Populate team names and country codes for filter dropdowns
-    this.teamNames = ['All', ...new Set(data.map(standing => standing.season_team_name))];
-    this.countryCodes = ['All', ...new Set(data.map(standing => standing.driver_country_code))];
+    this.teamNames = ['All Teams', ...new Set(data.map(standing => standing.season_team_name))];
+    this.countryCodes = ['All Countries', ...new Set(data.map(standing => standing.driver_country_code))];
   }
 
   onYearChange(event: any) {
@@ -85,44 +86,26 @@ export class DriverStandingsComponent implements OnInit {
 
   // Apply filter based on dropdown selection (team or country)
   applyFilter(event: any, filterType: string) {
-    const filterValue = event.value;
-  
-    // Store the current team and country filters
-    const currentTeamFilter = this.dataSource.filterPredicate?.toString().includes('team');
-    const currentCountryFilter = this.dataSource.filterPredicate?.toString().includes('country');
-  
-    // If "All" is selected for the current filter type, reset the respective filter
-    if (filterValue === 'All') {
-      if (filterType === 'team') {
-        this.dataSource.filterPredicate = (data: DriverStanding) => {
-          // Keep filtering by country, reset team
-          return currentCountryFilter ? data.driver_country_code.toLowerCase().includes(this.countryCodeFilter || '') : true;
-        };
-      } else if (filterType === 'country') {
-        this.dataSource.filterPredicate = (data: DriverStanding) => {
-          // Keep filtering by team, reset country
-          return currentTeamFilter ? data.season_team_name.toLowerCase().includes(this.teamFilter || '') : true;
-        };
-      }
-    } else {
-      // Apply filter for the selected team or country
-      if (filterType === 'team') {
-        this.teamFilter = filterValue.trim().toLowerCase();
-        this.dataSource.filterPredicate = (data: DriverStanding) => {
-          return data.season_team_name.toLowerCase().includes(this.teamFilter) &&
-                 data.driver_country_code.toLowerCase().includes(this.countryCodeFilter || '');
-        };
-      } else if (filterType === 'country') {
-        this.countryCodeFilter = filterValue.trim().toLowerCase();
-        this.dataSource.filterPredicate = (data: DriverStanding) => {
-          return data.driver_country_code.toLowerCase().includes(this.countryCodeFilter) &&
-                 data.season_team_name.toLowerCase().includes(this.teamFilter || '');
-        };
-      }
+    const filterValue = event.value.trim().toLowerCase();
+
+    console.log(filterValue)
+    
+    if (filterType === 'team') {
+      this.teamFilter = filterValue === 'all teams' ? '' : filterValue;
+    } else if (filterType === 'country') {
+      this.countryCodeFilter = filterValue === 'all countries' ? '' : filterValue;
     }
   
+    this.dataSource.filterPredicate = (data: DriverStanding) => {
+      const teamMatches = this.teamFilter ? data.season_team_name.toLowerCase().includes(this.teamFilter) : true;
+      const countryMatches = this.countryCodeFilter ? data.driver_country_code.toLowerCase().includes(this.countryCodeFilter) : true;
+  
+      return teamMatches && countryMatches;
+    };
+  
     // Trigger the filter update
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue;
   }
+  
   
 }

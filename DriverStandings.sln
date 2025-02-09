@@ -11,6 +11,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverStandingsApi", "Drive
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverStandingsApi.UnitTests", "DriverStandingsApi.UnitTests\DriverStandingsApi.UnitTests.csproj", "{67D9FC4C-C842-471E-9C71-D794E5C6AFB1}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DriverStandingsWebApp", "DriverStandingsWebApp\", "{9CFA44EA-099B-4D6C-AAB5-0C764B89FF1F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56569"
+		Debug.AspNetCompiler.PhysicalPath = "DriverStandingsWebApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56569\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56569"
+		Release.AspNetCompiler.PhysicalPath = "DriverStandingsWebApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56569\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56569"
+		SlnRelativePath = "DriverStandingsWebApp\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +54,10 @@ Global
 		{67D9FC4C-C842-471E-9C71-D794E5C6AFB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67D9FC4C-C842-471E-9C71-D794E5C6AFB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67D9FC4C-C842-471E-9C71-D794E5C6AFB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CFA44EA-099B-4D6C-AAB5-0C764B89FF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFA44EA-099B-4D6C-AAB5-0C764B89FF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CFA44EA-099B-4D6C-AAB5-0C764B89FF1F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFA44EA-099B-4D6C-AAB5-0C764B89FF1F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
