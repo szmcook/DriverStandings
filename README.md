@@ -25,12 +25,12 @@ RB_API_KEY=<your api key>
 
 Future development would include:
 
-- [] Front end should be styled according to Red Bull guidelines
 - [] Front end requires Red Bull's fonts
+- [] Front end should use HTTPS, this should help fix the certificate validation issues
+- [] Front end requires a test suite
+- [] Clarification is required on whether to display the driver country
 - [] Front end should include responsive design to accomodate different screen sizes
 - [] Front end should only display years for which there's data or an informative message if there's no data
-- [] clarification is required on whether to display the driver country
-- [] Front end should use HTTPS
-- [] Front end requires a test suite
-- [] strings should be localised
-- [] country codes should be replaced with country names
+- [] Strings should be localised
+- [] Country codes should be replaced with country names
+- [] Back end authentication should be configured to allow requests from front end
