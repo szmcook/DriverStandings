@@ -1,6 +1,8 @@
 <div class="driver-standings-wrapper">
 
-  <h1>{{ selectedYear }} Driver Standings</h1>
+  <div class="title-banner">
+    <h1>{{ selectedYear }} Driver Standings</h1>
+  </div>
 
   <div class="filters-wrapper">
     <mat-form-field appearance="fill">
@@ -56,5 +58,9 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="bottom-banner">
+    <p class="authorship-text">Designed for Red Bull Racing by Sam Cook</p>
   </div>
 </div>
