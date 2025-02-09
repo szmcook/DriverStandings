@@ -23,12 +23,12 @@ RB_API_KEY=<your api key>
 
 ## Limitations & Future Work
 
-As I have no experience with Angular and a time constraint, this project is not complete and requires the following work:
+Future development would include:
 
 - [] Front end should be styled according to Red Bull guidelines
-    - [] Front end requires Red Bull's fonts
+- [] Front end requires Red Bull's fonts
 - [] Front end should include responsive design to accomodate different screen sizes
-- [] Front end should only display years for which there's data & an informative message if there's no data
+- [] Front end should only display years for which there's data or an informative message if there's no data
 - [] clarification is required on whether to display the driver country
 - [] Front end should use HTTPS
 - [] Front end requires a test suite
